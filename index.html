@@ -1,1 +1,593 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Honey of a Day Weddings | Wedding Officiant</title>
+  <meta name="description" content="Honey of a Day Weddings — warm, personalized wedding ceremonies crafted with heart. Serving Durham Region, the GTA, and beyond." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Honey of a Day Weddings" />
+  <meta property="og:description" content="Warm, personalized wedding ceremonies crafted with heart." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Honey of a Day Logo.PNG" />
+
+  <style>
+    :root{
+      --bg: #fbf7ef;
+      --paper: #fffaf0;
+      --text: #1f2a24;
+      --muted: #4b5a52;
+      --honey: #caa338;
+      --honey-deep: #b88f24;
+      --green: #2f5c47;
+      --border: rgba(31,42,36,.12);
+      --shadow: 0 12px 32px rgba(31,42,36,.10);
+      --radius: 18px;
+      --max: 1080px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 20% 0%, #fff 0%, var(--bg) 55%, #f7f1e5 100%);
+    }
+    a{ color: inherit; }
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+
+    /* Top bar */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 10px 0 24px;
+    }
+    .brand-mini{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      text-decoration:none;
+    }
+    .mark{
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(202,163,56,.25), rgba(47,92,71,.10));
+      display:grid;
+      place-items:center;
+      border: 1px solid var(--border);
+    }
+    .mark::after{
+      content:"🍯";
+      font-size: 18px;
+      line-height: 1;
+      transform: translateY(1px);
+    }
+    .brand-mini span{
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .nav{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      text-decoration:none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+    .nav a:hover{
+      background: rgba(255,255,255,.65);
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: rgba(255,250,240,.8);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main{
+      padding: 34px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-main::before{
+      content:"";
+      position:absolute;
+      inset:-40% -40% auto auto;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle at 30% 30%, rgba(202,163,56,.25), rgba(202,163,56,0) 60%);
+      transform: rotate(15deg);
+      pointer-events:none;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .logo img{
+      width: min(520px, 100%);
+      height: auto;
+      display:block;
+      filter: drop-shadow(0 10px 18px rgba(31,42,36,.12));
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      gap: 10px;
+      align-items:center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.6);
+      font-weight: 700;
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: .2px;
+      margin: 6px 0 14px;
+    }
+    .eyebrow b{ color: var(--honey-deep); }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.4px;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+
+    .cta-row{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      text-decoration:none;
+      font-weight: 800;
+      letter-spacing: .2px;
+      box-shadow: 0 8px 18px rgba(31,42,36,.08);
+      transition: transform .08s ease, background .12s ease;
+    }
+    .btn:hover{ background: rgba(255,255,255,.92); transform: translateY(-1px); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(202,163,56,.95), rgba(202,163,56,.75));
+      border-color: rgba(184,143,36,.45);
+      color: #1b1b16;
+    }
+    .btn.primary:hover{
+      background: linear-gradient(135deg, rgba(202,163,56,1), rgba(202,163,56,.80));
+    }
+    .btn small{
+      font-weight: 800;
+      opacity: .9;
+    }
+
+    .hero-side{
+      padding: 26px 22px;
+      display:flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .side-block{
+      padding: 16px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+    }
+    .side-block h3{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .side-block p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+    .checklist{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Sections */
+    .grid{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .span-6{ grid-column: span 6; }
+    .span-7{ grid-column: span 7; }
+    .span-5{ grid-column: span 5; }
+    .span-12{ grid-column: span 12; }
+    @media (max-width: 900px){
+      .span-6, .span-7, .span-5{ grid-column: span 12; }
+    }
+
+    .section{
+      padding: 22px 22px;
+    }
+    .section h2{
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing: -0.2px;
+    }
+    .section p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .pill{
+      display:inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      color: var(--green);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .2px;
+      margin-bottom: 10px;
+    }
+
+    .list{
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .tiles{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px){
+      .tiles{ grid-template-columns: 1fr; }
+    }
+    .tile{
+      padding: 16px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+    }
+    .tile b{
+      display:block;
+      margin-bottom: 6px;
+      letter-spacing: .2px;
+    }
+    .tile span{
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    .faq{
+      margin-top: 10px;
+      display:grid;
+      gap: 10px;
+    }
+    details{
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.55);
+      padding: 12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 22px;
+      padding: 22px 18px;
+      color: rgba(31,42,36,.70);
+      text-align:center;
+      font-size: 14px;
+    }
+    .fine{
+      max-width: 72ch;
+      margin: 10px auto 0;
+      opacity: .9;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand-mini" href="#top" aria-label="Honey of a Day Weddings">
+        <div class="mark" aria-hidden="true"></div>
+        <span>Honey of a Day</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Availability</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section class="card hero-main" aria-label="Hero">
+        <div class="logo">
+          <!-- Put your logo at assets/Honey of a Day Logo.PNG -->
+          <img src="assets/Honey of a Day Logo.PNG" alt="Honey of a Day Weddings logo" />
+        </div>
+
+        <div class="eyebrow">
+          <span>WEDDING OFFICIANT</span>
+          <span aria-hidden="true">•</span>
+          <b>Durham Region + GTA</b>
+        </div>
+
+        <h1>Warm, personal ceremonies crafted with heart.</h1>
+        <p class="sub">
+          Your ceremony should feel like <em>you</em> — meaningful, relaxed, and beautifully intentional.
+          I’ll help you tell your story in a way that feels authentic (and never generic).
+        </p>
+
+        <div class="cta-row">
+          <!-- Replace with your Calendly / booking link -->
+          <a class="btn primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">
+            Check availability <small>↗</small>
+          </a>
+
+          <!-- Replace with your preferred secondary contact (Instagram DM works great) -->
+          <a class="btn" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">
+            Message on Instagram <small>↗</small>
+          </a>
+
+          <a class="btn" href="#services">See services</a>
+        </div>
+      </section>
+
+      <aside class="card hero-side" aria-label="Highlights">
+        <div class="side-block">
+          <h3>The vibe</h3>
+          <p>
+            Calm, confident, and heartfelt — with just enough humour (when it fits) and none of the cringe.
+          </p>
+        </div>
+
+        <div class="side-block">
+          <h3>Great for</h3>
+          <ul class="checklist">
+            <li>Backyard + cottage weddings</li>
+            <li>Micro-weddings + elopements</li>
+            <li>Non-religious or lightly spiritual ceremonies</li>
+            <li>Couples who want “personal, not performative”</li>
+          </ul>
+        </div>
+
+        <div class="side-block">
+          <h3>Quick note</h3>
+          <p>
+            I don’t publish my email address online (spam is the worst). The buttons here are the best way to reach me.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <section id="services" class="grid" aria-label="Services">
+      <div class="card section span-7">
+        <div class="pill">Services</div>
+        <h2>Choose the level of support you want.</h2>
+        <p>
+          Whether you want something simple and sweet, or fully personalized, we’ll create a ceremony that fits your day.
+        </p>
+
+        <div class="tiles" role="list">
+          <div class="tile" role="listitem">
+            <b>Signature Ceremony</b>
+            <span>Personalized story, custom wording, guidance on vows + readings, and a confident lead on the day.</span>
+          </div>
+          <div class="tile" role="listitem">
+            <b>Simple + Sweet</b>
+            <span>A shorter ceremony with thoughtful structure — warm, efficient, and still very “you.”</span>
+          </div>
+          <div class="tile" role="listitem">
+            <b>Elopements</b>
+            <span>Intimate ceremonies for just the two of you (or a tiny crew). Beautiful, low-stress, and memorable.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card section span-5">
+        <div class="pill">Coverage</div>
+        <h2>Local, with room to roam.</h2>
+        <p>
+          Based in <strong>Durham Region</strong>, serving the <strong>GTA</strong> and surrounding areas.
+          Travel is available — tell me where you’re celebrating.
+        </p>
+        <ul class="list">
+          <li>Durham Region (Oshawa, Whitby, Ajax, Pickering)</li>
+          <li>Toronto + GTA</li>
+          <li>Prince Edward County, Kawarthas, Muskoka (by request)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="process" class="grid" aria-label="Process">
+      <div class="card section span-6">
+        <div class="pill">Process</div>
+        <h2>Easy, guided, and not awkward.</h2>
+        <p>
+          You’ll never wonder “what happens next?” I’ll keep things simple and clear — and make sure your ceremony feels
+          polished without feeling over-produced.
+        </p>
+        <ul class="list">
+          <li><strong>1) Quick chat</strong> — date, vibe, and what matters most to you</li>
+          <li><strong>2) Ceremony plan</strong> — structure, timing, readings, vows, and tone</li>
+          <li><strong>3) Draft + refine</strong> — we shape it until it feels exactly right</li>
+          <li><strong>4) Wedding day</strong> — calm leadership, great delivery, paperwork handled</li>
+        </ul>
+      </div>
+
+      <div class="card section span-6">
+        <div class="pill">What you’ll get</div>
+        <h2>A ceremony written for humans.</h2>
+        <p>
+          No cookie-cutter scripts. No filler. Just words that sound like you — and land the way you want them to.
+        </p>
+        <div class="tiles">
+          <div class="tile">
+            <b>Personal story</b>
+            <span>Your relationship, your people, your moments — told with care.</span>
+          </div>
+          <div class="tile">
+            <b>Confident delivery</b>
+            <span>Warm presence + clear pacing so everyone can relax.</span>
+          </div>
+          <div class="tile">
+            <b>Paperwork done</b>
+            <span>Legals handled properly so you can just enjoy the day.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="grid" aria-label="FAQ">
+      <div class="card section span-12">
+        <div class="pill">FAQ</div>
+        <h2>Quick answers.</h2>
+        <p>Here are the questions couples usually ask first.</p>
+
+        <div class="faq">
+          <details>
+            <summary>Do you do non-religious ceremonies?</summary>
+            <p>
+              Yes. Most of my ceremonies are non-religious (or lightly spiritual if you want that). We’ll choose language that
+              fits your values and your people.
+            </p>
+          </details>
+
+          <details>
+            <summary>How far in advance should we book?</summary>
+            <p>
+              If you’re getting married in peak season (May–October), earlier is better — but it never hurts to check.
+              Use the “Check availability” button and I’ll confirm quickly.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can we write our own vows?</summary>
+            <p>
+              Absolutely. I can also give you a simple vow-writing guide (and help you keep them balanced in length and tone).
+            </p>
+          </details>
+
+          <details>
+            <summary>Do you perform elopements or micro-weddings?</summary>
+            <p>
+              Yes — and they’re often the most magical. If you’re doing something intimate, I’ll help make it feel intentional and special.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="grid" aria-label="Availability">
+      <div class="card section span-12">
+        <div class="pill">Availability</div>
+        <h2>Ready to see if your date is open?</h2>
+        <p>
+          I keep things simple: check availability, share your date + location, and we’ll take it from there.
+          (No email address posted online. Ever.)
+        </p>
+
+        <div class="cta-row" style="margin-top:14px;">
+          <a class="btn primary" href="https://calendly.com/your-link" target="_blank" rel="noopener">
+            Check availability <small>↗</small>
+          </a>
+          <a class="btn" href="https://instagram.com/yourhandle" target="_blank" rel="noopener">
+            Message on Instagram <small>↗</small>
+          </a>
+        </div>
+
+        <p class="fine">
+          Tip: If you don’t use Instagram, swap that button for a scheduling link, a Google Form, or a “contact” page on another platform.
+          Keeping your email off the site is the point.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Honey of a Day Weddings</div>
+      <div class="fine">
+        Serving Durham Region, the GTA, and beyond • Site hosted on GitHub Pages
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
