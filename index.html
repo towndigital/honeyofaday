@@ -55,26 +55,64 @@
       padding: 22px 18px 72px;
     }
 
-    /* Header (simple, logo only) */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 10px 0 18px;
-    }
-    .brand{
-      text-decoration:none;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width: 100%;
-    }
-    .brand img{
-      width: min(420px, 92vw);
-      height: auto;
-      display:block;
-      filter: drop-shadow(0 10px 18px rgba(31,42,36,.10));
-    }
+  /* Header (text-based wordmark) */
+.text-header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 0 18px;
+}
+
+.mini-brand{
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 10px 22px rgba(31,42,36,.06);
+}
+
+.mini-brand:hover{
+  background: rgba(255,255,255,.75);
+}
+
+.mini-icon{
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(202,163,56,.28), rgba(47,92,71,.10));
+  border: 1px solid rgba(31,42,36,.10);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.mini-wordmark{
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 4px;
+}
+
+.mini-script{
+  font-family: var(--script);
+  font-size: 34px;
+  color: var(--honey-deep);
+  letter-spacing: .2px;
+  transform: translateY(2px);
+}
+
+.mini-sub{
+  font-family: var(--sans);
+  font-weight: 900;
+  letter-spacing: .28em;
+  color: var(--green);
+  font-size: 13px;
+}
 
     /* Layout */
     .hero{
@@ -321,12 +359,15 @@
 
 <body>
   <div class="wrap">
-    <header>
-      <a class="brand" href="#top" aria-label="Honey of a Day Weddings">
-        <!-- Updated logo path -->
-        <img src="/Honey-of-a-Day-Logo.PNG" alt="Honey of a Day Weddings logo" />
-      </a>
-    </header>
+   <header class="text-header" id="top">
+  <a class="mini-brand" href="#top" aria-label="Honey of a Day Weddings">
+    <span class="mini-icon" aria-hidden="true">🍯</span>
+    <span class="mini-wordmark">
+      <span class="mini-script">Honey of a Day</span>
+      <span class="mini-sub">WEDDINGS</span>
+    </span>
+  </a>
+</header>
 
     <main id="top" class="hero">
       <section class="card hero-main" aria-label="Hero">
@@ -336,7 +377,6 @@
           <b>Durham Region + GTA</b>
         </div>
 
-        <div class="script-accent">Honey of a Day</div>
         <h1>Warm, personal ceremonies crafted with heart.</h1>
 
         <p class="sub">
