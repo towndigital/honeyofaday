@@ -1,452 +1,221 @@
-<!doctype html>
-<html lang="en-CA">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Honey of a Day Weddings | Wedding Officiant</title>
-  <meta name="description" content="Honey of a Day Weddings — warm, personalized wedding ceremonies crafted with heart. Serving Durham Region, the GTA, and beyond." />
+  <title>Honey of a Day | Rev. Erin Anderson</title>
 
-  <!-- Favicon (emoji, no file needed) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%AF%3C/text%3E%3C/svg%3E">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Honey of a Day Weddings" />
-  <meta property="og:description" content="Warm, personal ceremonies crafted with heart." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/Honey-of-a-Day-Logo.PNG" />
-
-  <!-- Fonts: wedding-y headings, readable body -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Honey of a Day — small rituals for meaningful moments, led by Rev. Erin Anderson."
+  />
 
   <style>
-    :root{
-      --bg: #fbf7ef;
-      --paper: #fffaf0;
-      --text: #1f2a24;
-      --muted: #4b5a52;
-      --honey: #caa338;
-      --honey-deep: #b88f24;
-      --green: #2f5c47;
-      --border: rgba(31,42,36,.12);
-      --shadow: 0 12px 32px rgba(31,42,36,.10);
-      --radius: 18px;
-      --max: 1080px;
-
-      --serif: "Playfair Display", ui-serif, Georgia, serif;
-      --script: "Allura", cursive;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    :root {
+      --background: #f7f6f2;
+      --text: #111111;
+      --muted: #686868;
+      --accent: #b66a3c;
     }
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
-    body{
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
-      font-family: var(--sans);
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      background: var(--background);
       color: var(--text);
-      background: radial-gradient(1200px 700px at 20% 0%, #fff 0%, var(--bg) 55%, #f7f1e5 100%);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
-    a{ color: inherit; }
-    .wrap{
-      max-width: var(--max);
+
+    main {
+      width: 100%;
+      max-width: 1100px;
+      height: 100vh;
+      height: 100svh;
       margin: 0 auto;
-      padding: 22px 18px 72px;
+      padding: 48px;
+      display: grid;
+      grid-template-rows: 1fr auto;
     }
 
-/* Header (logo image, simple) */
-.logo-header{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding: 18px 0 10px;
-}
-
-.logo-img{
-  max-height: 120px;     /* try 120–170 */
-  width: auto;
-  max-width: 92vw;
-  height: auto;
-  display:block;
-}
-
-    /* Layout */
-    .hero{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
+    .content {
+      align-self: center;
+      max-width: 900px;
     }
 
-    .card{
-      background: rgba(255,250,240,.82);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    h1 {
+      margin: 0 0 32px;
+      font-size: clamp(58px, 9vw, 126px);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      font-weight: 700;
     }
 
-    /* Hero main */
-    .hero-main{
-      padding: 34px 28px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-main::before{
-      content:"";
-      position:absolute;
-      inset:-40% -40% auto auto;
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle at 30% 30%, rgba(202,163,56,.25), rgba(202,163,56,0) 60%);
-      transform: rotate(15deg);
-      pointer-events:none;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      gap: 10px;
-      align-items:center;
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.6);
-      font-weight: 800;
-      color: var(--green);
-      font-size: 13px;
-      letter-spacing: .2px;
-      margin: 0 0 14px;
-    }
-    .eyebrow b{ color: var(--honey-deep); }
-
-    h1{
-      margin: 0 0 10px;
-      font-family: var(--serif);
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.08;
-      letter-spacing: -0.3px;
-    }
-    .script-accent{
-      font-family: var(--script);
-      font-size: 44px;
-      line-height: 1;
-      color: var(--honey-deep);
-      display:inline-block;
-      margin: 0 0 8px;
-      opacity: .95;
-    }
-
-    .sub{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.65;
-      max-width: 62ch;
-    }
-
-    .cta-row{
-      display:flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.75);
-      text-decoration:none;
-      font-weight: 900;
-      letter-spacing: .2px;
-      box-shadow: 0 8px 18px rgba(31,42,36,.08);
-      transition: transform .08s ease, background .12s ease;
-    }
-    .btn:hover{ background: rgba(255,255,255,.92); transform: translateY(-1px); }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(202,163,56,.95), rgba(202,163,56,.75));
-      border-color: rgba(184,143,36,.45);
-      color: #1b1b16;
-    }
-    .btn.primary:hover{
-      background: linear-gradient(135deg, rgba(202,163,56,1), rgba(202,163,56,.80));
-    }
-    .btn small{ font-weight: 900; opacity: .9; }
-
-    /* Side */
-    .hero-side{
-      padding: 26px 22px;
-      display:flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .side-block{
-      padding: 16px 16px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.55);
-    }
-    .side-block h3{
-      margin: 0 0 8px;
-      font-family: var(--serif);
-      font-size: 16px;
-      letter-spacing: -0.1px;
-      color: var(--green);
-    }
-    .side-block p{
+    .intro {
       margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 15px;
-    }
-    .checklist{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 15px;
-    }
-    .strike{
-      text-decoration: line-through;
-      opacity: .65;
+      max-width: 850px;
+      font-size: clamp(24px, 3.4vw, 42px);
+      line-height: 1.14;
+      letter-spacing: -0.03em;
     }
 
-    /* Sections */
-    .grid{
+    .intro + .intro {
       margin-top: 22px;
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-    .span-6{ grid-column: span 6; }
-    .span-7{ grid-column: span 7; }
-    .span-5{ grid-column: span 5; }
-    .span-12{ grid-column: span 12; }
-    @media (max-width: 900px){
-      .span-6, .span-7, .span-5{ grid-column: span 12; }
     }
 
-    .section{
-      padding: 22px 22px;
-    }
-    .section h2{
-      margin: 0 0 8px;
-      font-family: var(--serif);
-      font-size: 24px;
-      letter-spacing: -0.2px;
-    }
-    .section p{
-      margin: 0;
+    .secondary {
       color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
     }
 
-    .pill{
-      display:inline-flex;
-      padding: 7px 11px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.55);
-      color: var(--green);
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: .2px;
-      margin-bottom: 10px;
+    footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 15px;
     }
 
-    .list{
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 16px;
-    }
-
-    .tiles{
-      margin-top: 12px;
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 900px){
-      .tiles{ grid-template-columns: 1fr; }
-    }
-    .tile{
-      padding: 16px 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.55);
-    }
-    .tile b{
-      display:block;
-      margin-bottom: 6px;
-      letter-spacing: .2px;
-      font-family: var(--serif);
+    .instagram {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
       font-size: 18px;
     }
-    .tile span{
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 15px;
+
+    .instagram:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
-    /* Footer */
-    footer{
-      margin-top: 22px;
-      padding: 22px 18px;
-      color: rgba(31,42,36,.70);
-      text-align:center;
-      font-size: 14px;
+    .footer-right {
+      text-align: right;
+      color: var(--muted);
+      line-height: 1.35;
     }
-    .fine{
-      max-width: 76ch;
-      margin: 10px auto 0;
-      opacity: .9;
-      line-height: 1.65;
+
+    .title {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        margin-bottom: 22px;
+        font-size: clamp(48px, 15vw, 70px);
+      }
+
+      .intro {
+        font-size: clamp(21px, 6.4vw, 27px);
+        line-height: 1.13;
+      }
+
+      .intro + .intro {
+        margin-top: 18px;
+      }
+
+      footer {
+        gap: 14px;
+        font-size: 12px;
+      }
+
+      .instagram {
+        font-size: 16px;
+      }
+
+      .footer-right {
+        max-width: 190px;
+      }
+    }
+
+    @media (max-height: 680px) {
+      main {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 10vh, 74px);
+        margin-bottom: 16px;
+      }
+
+      .intro {
+        font-size: clamp(18px, 4vh, 27px);
+      }
+
+      .intro + .intro {
+        margin-top: 14px;
+      }
+
+      footer {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-  <header class="logo-header" id="top" aria-label="Honey of a Day Weddings">
-  <img class="logo-img" src="/Honey-of-a-Day-Weddings.png" alt="Honey of a Day Weddings" />
-</header>
 
-    <main id="top" class="hero">
-      <section class="card hero-main" aria-label="Hero">
-        <div class="eyebrow">
-          <span>WEDDING OFFICIANT</span>
-          <span aria-hidden="true">•</span>
-          <b>Durham Region + GTA</b>
-        </div>
+  <main>
 
-        <h1>Warm, personal ceremonies crafted with heart.</h1>
+    <section class="content">
 
-        <p class="sub">
-          Your ceremony should feel like you, meaningful, relaxed, and beautifully intentional.
-          I’ll help you shape a moment that sounds natural, feels true, and keeps the focus where it belongs.
-        </p>
+      <h1>Hi, I’m Rev. Erin.</h1>
 
-        <div class="cta-row">
-          <a class="btn primary" href="https://instagram.com/itsahoneyofaday" target="_blank" rel="noopener">
-            Message on Instagram <small>↗</small>
-          </a>
+      <p class="intro">
+        Somehow, I became a minister.
+      </p>
 
-          <a class="btn" href="#services">See services</a>
-        </div>
-      </section>
+      <p class="intro">
+        I officiate weddings, give blessings, and occasionally find new ways
+        to justify having “Rev.” in front of my name.
+      </p>
 
-      <aside class="card hero-side" aria-label="Highlights">
-        <div class="side-block">
-          <h3>The vibe</h3>
-          <p>
-            Calm, confident, and heartfelt, with just enough humour when it fits.
-          </p>
-        </div>
+      <p class="intro secondary">
+        Honey of a Day is about creating little rituals around meaningful moments.
+      </p>
 
-        <div class="side-block">
-          <h3>Great for</h3>
-          <ul class="checklist">
-            <li>Couples who want a ceremony that feels personal and easy</li>
-            <li>Backyard, cottage, and family-focused celebrations</li>
-            <li>Micro-weddings and elopements</li>
-            <li>Non-religious ceremonies, or lightly spiritual wording if you want it</li>
-          </ul>
-        </div>
-
-        <div class="side-block">
-          <h3>Quick note</h3>
-          <p>
-            Your dog is <span class="strike">welcome</span> encouraged to be a part of your ceremony.
-          </p>
-        </div>
-      </aside>
-    </main>
-
-    <section id="services" class="grid" aria-label="Services">
-      <div class="card section span-7">
-        <div class="pill">Services</div>
-        <h2>Two simple options.</h2>
-        <p>
-          Whether you want a fully custom ceremony, or you already have someone special who will speak,
-          I can help make it official and feel seamless.
-        </p>
-
-        <div class="tiles" role="list">
-          <div class="tile" role="listitem">
-            <b>Custom Ceremony</b>
-            <span>
-              A personalized ceremony written for you, with thoughtful structure, great pacing,
-              and guidance on vows, readings, and how the whole thing flows.
-            </span>
-          </div>
-
-          <div class="tile" role="listitem">
-            <b>Legalese Only</b>
-            <span>
-              You choose the person who tells your story, I handle the legal requirements and paperwork.
-              Think of it as “your people do the speaking, I make it official.”
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card section span-5">
-        <div class="pill">Coverage</div>
-        <h2>Local, with room to roam.</h2>
-        <p>
-          Based in <strong>Durham Region</strong>, serving the <strong>GTA</strong> and surrounding areas.
-          Travel is available, tell me where you’re celebrating.
-        </p>
-        <ul class="list">
-          <li>Durham Region (Oshawa, Whitby, Ajax, Pickering)</li>
-          <li>Toronto and the GTA</li>
-          <li>Prince Edward County, Kawarthas, Muskoka (by request)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="grid" aria-label="Next step">
-      <div class="card section span-12">
-        <div class="pill">Next step</div>
-        <h2>Want to chat about your day?</h2>
-        <p>
-          Send me a message on Instagram with your wedding date, location, and the vibe you’re going for.
-          I’ll reply with next steps and the details you need.
-        </p>
-
-        <div class="cta-row" style="margin-top:14px;">
-          <a class="btn primary" href="https://instagram.com/itsahoneyofaday" target="_blank" rel="noopener">
-            Message on Instagram <small>↗</small>
-          </a>
-        </div>
-
-        <p class="fine">
-      </br>
-          If you prefer, you can also share any must-haves, like including kids, pets, cultural elements, or a specific tone.
-          This is your moment, we’ll make it feel like it.
-        </p>
-      </div>
     </section>
 
     <footer>
-      <div>© <span id="year"></span> Honey of a Day Weddings 🍯</div>
-      <div class="fine">
-        Serving Durham Region, the GTA, and beyond • Rev. Erin Anderson Ministry
-      </div>
-    </footer>
-  </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <a
+        class="instagram"
+        href="https://www.instagram.com/itsahoneyofaday"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram ↗
+      </a>
+
+      <div class="footer-right">
+        <div class="title">Rev. Erin Anderson</div>
+        <div>Canadian International Metaphysical Minister</div>
+        <div>That’s the whole sermon.</div>
+      </div>
+
+    </footer>
+
+  </main>
+
 </body>
 </html>
